@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playwrite+CA+Guides&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Outfit", sans-serif;
+}
+
+#grid{
+    display: grid;
+    gap: 0.7em;
+}
+
+#grid img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#grid article{
+    overflow: hidden;
+}
+
+header{
+    padding: 1em;
+    text-align: center;
+    align-content: center;
+}
+
+#logo{
+    font-family: "Playwrite CA Guides", cursive;
+    color: black;
+    font-size: 2.5em;
+}
+
+h1{
+    font-weight: lighter;
+    font-size: 1.5em;
+}
+
+article h2{
+    position: absolute;
+    top: 5%;
+    left: 0;
+    background-color: white;
+    padding: 5px;
+    padding-right: 15px;
+    border-radius: 0 20px 20px 0;
+}
+
+article{
+    position: relative;
+}
+
+article p{
+    position: absolute;
+    bottom: 0;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    font-size: 0.7em;
+    border-radius: 10px;
+}
+
+/*----------tablet---------------*/
+
+@media all and (min-width:768px){
+    #grid{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    header, #img3{
+        grid-column: span 2;
+    }
+}
+
+/*----------desktop---------------*/
+
+@media all and (min-width:1200px){
+    
+    #grid{
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr 2fr;
+        height: 100vh;
+    }
+
+    header{
+        grid-column: span 1;
+    }
+
+    #img3{
+        grid-column: span 1;
+    }
+
+    #img1, #img2, #img3, #img4{
+        grid-row: span 2;
+    }
+
+    #img4{
+        grid-column: span 2;
+    }
+
+    article p{
+        opacity: 0;
+        transition: 0.5s;
+        width: 100%;
+    }
+
+    article:hover p{
+        opacity: 1;
+    }
+
+}
